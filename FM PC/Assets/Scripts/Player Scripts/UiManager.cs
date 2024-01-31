@@ -17,6 +17,7 @@ public class UiManager : MonoBehaviour
 
     public Text enemiesCount;
     private int enemiesCountValue;
+    public Text playerMoney;
 
     private void Start()
     {
@@ -51,5 +52,7 @@ public class UiManager : MonoBehaviour
 
         enemiesCountValue = EnemiesManager.enemiesOnLvl;
         enemiesCount.text = enemiesCountValue.ToString();
+
+        playerMoney.text = PlayerMoney.playerMoney.ToString();
     }
 }

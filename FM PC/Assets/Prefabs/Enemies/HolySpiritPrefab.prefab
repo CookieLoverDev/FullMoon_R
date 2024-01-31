@@ -78,7 +78,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4866852680549770641, guid: f8952b28b5ba82540a912e7caf37924e, type: 3}
+  m_Sprite: {fileID: 4866852680549770641, guid: f8952b28b5ba82540a912e7caf37924e,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -186,7 +187,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spiritRb: {fileID: 7384725193160079870}
   range: {fileID: 4814366821900729801}
-  bulletPre: {fileID: 7515319371566890398, guid: 57b618ee12844c941a670209a48ac3b6, type: 3}
+  bulletPre: {fileID: 7515319371566890398, guid: 57b618ee12844c941a670209a48ac3b6,
+    type: 3}
 --- !u!1 &8276472313523721174
 GameObject:
   m_ObjectHideFlags: 0

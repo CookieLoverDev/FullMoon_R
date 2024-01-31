@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HolySpirit : MonoBehaviour
+public class HolySpirit : MonoBehaviour, IDamagable
 {
     private float speed = 2f;
     private float directionTime = 3f;
@@ -16,8 +16,12 @@ public class HolySpirit : MonoBehaviour
     internal static Vector2 target;
     private bool canShoot;
 
+    private int health = 5;
+    private bool isAlive;
+
     private void Start()
     {
+        isAlive = true;
         changeDirection = true;
         canShoot = true;
     }
@@ -63,6 +67,25 @@ public class HolySpirit : MonoBehaviour
     private void Move()
     {
         spiritRb.velocity = floatDirection * speed;
+    }
+
+    public void OnHit(int damage, Vector2 knockBack)
+    {
+        health -= damage;
+
+        if (health <= 0)
+        {
+            isAlive = false;
+            PlayerMoney.playerMoney += 2;
+            Destroy(gameObject);
+        }
+
+        if (health > 1)
+        {
+            spiritRb.AddForce(knockBack);
+        }
+
+        Debug.Log($"Slime current have {health} health");
     }
 
     private IEnumerator DirReset()

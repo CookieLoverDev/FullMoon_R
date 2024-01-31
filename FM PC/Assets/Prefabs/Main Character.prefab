@@ -81,6 +81,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponCollider: {fileID: 5054654359104420585}
+  text: {fileID: 0}
 --- !u!1 &719195948939927287
 GameObject:
   m_ObjectHideFlags: 0
@@ -99,6 +100,7 @@ GameObject:
   - component: {fileID: 4799735841515092035}
   - component: {fileID: 3608389964457234164}
   - component: {fileID: 3028403983386338419}
+  - component: {fileID: 5601127528575762900}
   m_Layer: 3
   m_Name: Main Character
   m_TagString: Player
@@ -416,10 +418,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68234d3bd7a254944b6fed7fe90c0553, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
-  currentHealth: 0
   isAlive: 1
   playerRb: {fileID: 1226364364371053087}
+  armorValue: {fileID: 0}
 --- !u!114 &3028403983386338419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -432,8 +433,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab0a85f19d6c7f446888ee995fd03cd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStatus: {fileID: 3608389964457234164}
   healthPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -443,3 +447,17 @@ MonoBehaviour:
   FullPoint: {fileID: 128692573, guid: 3d71f08684356db4b87f3c2eb2e406fe, type: 3}
   EmptyPoint: {fileID: 548596112, guid: 3d71f08684356db4b87f3c2eb2e406fe, type: 3}
   damageText: {fileID: 0}
+  enemiesCount: {fileID: 0}
+  playerMoney: {fileID: 0}
+--- !u!114 &5601127528575762900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719195948939927287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c00f29e318f40e459058150e1fe0d19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

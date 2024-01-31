@@ -1,10 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealthSystem : MonoBehaviour
 {
-    internal static float maxHealth = 6;
+    public static float maxHealth = 6;
     internal  static float currentHealth;
     internal static float armor;
 
@@ -13,8 +15,12 @@ public class PlayerHealthSystem : MonoBehaviour
 
     public Rigidbody2D playerRb;
 
+    public Text armorValue;
+    private bool armorChange;
+
     private void Start()
     {
+        armorChange = false;
         isAlive = true;
         isInvincible = false;
         currentHealth = maxHealth;
@@ -46,6 +52,19 @@ public class PlayerHealthSystem : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             RecieveDamage(1, Vector2.zero);
+        }
+
+        if (armorValue.text != "0" && !armorChange)
+        {
+            armorChange = true;
+            maxHealth += Convert.ToInt32(armorValue.text);
+            currentHealth += Convert.ToInt32(armorValue.text);
+        }
+
+        if (armorValue.text == "0" && armorChange)
+        {
+            armorChange = false;
+            maxHealth = 6;
         }
     }
 

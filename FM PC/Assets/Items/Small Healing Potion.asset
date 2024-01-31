@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e651aac9d595ee14a9839ceb5bb5dc25, type: 3}
   m_Name: Small Healing Potion
   m_EditorClassIdentifier: 
-  id: 0695555cca38de54cbdcdc4bedfcd83e
+  id: 3c054755b4cf5aa4fa304636348949a5
   ItemName: Potion
   Icon: {fileID: 287316697, guid: 3d71f08684356db4b87f3c2eb2e406fe, type: 3}
   MaximumStacks: 1
   HpBonus: 0
   ManaBonus: 0
-  ArmorBonus: 0
+  ArmorBonus: 1
   StrengthBonus: 0
   CritBonus: 0
   SpeedBouns: 0
@@ -28,4 +28,4 @@ MonoBehaviour:
   ArmorPercentBonus: 0
   CritPercentBonus: 0
   HpPercentBonus: 0
-  EquipmentType: 1
+  EquipmentType: 5

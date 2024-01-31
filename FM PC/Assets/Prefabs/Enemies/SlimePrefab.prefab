@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3580755933995635821}
   - component: {fileID: 5519322117284107653}
   - component: {fileID: 2162512504751258491}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DetectionZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +161,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 7624702872256975084, guid: 03946b2ee4ced2445a85af316418ed08, type: 3}
+  m_Sprite: {fileID: 7624702872256975084, guid: 03946b2ee4ced2445a85af316418ed08,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -259,7 +260,8 @@ MonoBehaviour:
   slimeRb: {fileID: 1429162916770965728}
   detectionZone: {fileID: 2162512504751258491}
   animator: {fileID: 4055493804344794259}
-  deadBody: {fileID: 5051070106431545055, guid: e029e4cc031d7a946a7c7e58957f6923, type: 3}
+  deadBody: {fileID: 5051070106431545055, guid: e029e4cc031d7a946a7c7e58957f6923,
+    type: 3}
   damage: 1
   resistance: 0
   knockBackForce: 500

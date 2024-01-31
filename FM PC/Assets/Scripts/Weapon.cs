@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Weapon : MonoBehaviour
 {
@@ -8,12 +10,19 @@ public class Weapon : MonoBehaviour
     private float knockBackForce = 1500f;
 
     internal int weaponLevel;
-    internal static int weaponDamage = 5;
+    internal static int weaponDamage;
+
+    public Text text;
 
     private void Start()
     {
         if (weaponCollider != null)
             Debug.Log("Weapon is ready to use!");
+    }
+
+    private void Update()
+    {
+        weaponDamage = Convert.ToInt32(text.text);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
