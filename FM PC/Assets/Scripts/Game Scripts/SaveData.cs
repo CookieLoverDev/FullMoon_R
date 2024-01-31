@@ -6,9 +6,9 @@ public class SaveData
     public float currentHealth;
     public float[] position;
 
-    public SaveData(Player player, PlayerHealthSystem playerStatus)
+    public SaveData(Player player)
     {
-        currentHealth = playerStatus.currentHealth;
+        currentHealth = PlayerHealthSystem.currentHealth;
         position = new float[3];
 
         position[0] = player.transform.position.x;

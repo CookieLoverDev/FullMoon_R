@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 public class UiManager : MonoBehaviour
 {
-    public PlayerHealthSystem playerStatus;
 
     public Image[] healthPoints;
     public Sprite FullPoint;
@@ -28,7 +27,7 @@ public class UiManager : MonoBehaviour
     {
         for (float i = 0; i < healthPoints.Length; i++)
         {
-            if (i < playerStatus.currentHealth)
+            if (i < PlayerHealthSystem.currentHealth)
             {
                 healthPoints[(int)Math.Round(i)].sprite = FullPoint;
             }
@@ -37,7 +36,7 @@ public class UiManager : MonoBehaviour
                 healthPoints[(int)Math.Round(i)].sprite = EmptyPoint;
             }
 
-            if (i < playerStatus.maxHealth)
+            if (i < PlayerHealthSystem.maxHealth)
             {
                 healthPoints[(int)Math.Round(i)].enabled = true;
             }

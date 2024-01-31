@@ -10,8 +10,11 @@ public class Combat : MonoBehaviour
     private Player player;
     internal bool attackState;
 
+    internal static int mana;
+
     private void Start()
     {
+        mana = 3;
         attackState = false;
         player = GetComponent<Player>();
     }

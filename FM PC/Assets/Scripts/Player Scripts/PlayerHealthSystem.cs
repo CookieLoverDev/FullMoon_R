@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PlayerHealthSystem : MonoBehaviour
 {
-    internal float maxHealth = 6;
-    internal float currentHealth;
+    internal static float maxHealth = 6;
+    internal  static float currentHealth;
+    internal static float armor;
+
     private bool isInvincible;
     public bool isAlive;
 
@@ -16,6 +18,8 @@ public class PlayerHealthSystem : MonoBehaviour
         isAlive = true;
         isInvincible = false;
         currentHealth = maxHealth;
+
+        armor = 0;
     }
 
     private void Update()

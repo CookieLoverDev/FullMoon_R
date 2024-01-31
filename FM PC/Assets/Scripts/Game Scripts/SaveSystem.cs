@@ -4,13 +4,13 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public static class SaveSystem
 {
-    public static void Save(Player player, PlayerHealthSystem playerStatus)
+    public static void Save(Player player)
     {
         var formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/playerSave.umi";
         var fs = new FileStream(path, FileMode.Create);
 
-        SaveData saveData = new SaveData(player, playerStatus);
+        SaveData saveData = new SaveData(player);
 
         formatter.Serialize(fs, saveData);
         fs.Close();
