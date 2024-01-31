@@ -1,4 +1,5 @@
 using UnityEngine;
+
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -18,11 +19,14 @@ public class Item : ScriptableObject
     public Sprite Icon { get { return icon; } }
     public int MaximumStacks { get { return maximumStacks; } }
     public int Price { get { return price; } }
+
+#if UNITY_EDITOR
     public void OnValidate()
     {
         string path = AssetDatabase.GetAssetPath(this);
         id = AssetDatabase.AssetPathToGUID(path);
     }
+#endif
 
     public virtual Item GetCopy()
     {

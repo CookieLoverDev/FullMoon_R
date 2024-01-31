@@ -39016,6 +39016,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1821297256}
+    - target: {fileID: 4569338851495199298, guid: 57c9c15aff6257e419268da195fe095c,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -44025399
+      objectReference: {fileID: 0}
     - target: {fileID: 5130775721593679958, guid: 57c9c15aff6257e419268da195fe095c,
         type: 3}
       propertyPath: m_Name
@@ -54375,7 +54380,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -882077336, guid: ab21e7b1d0c44c84d8d44323a948aa3c, type: 3}
       - {fileID: -1880963067, guid: 2d9c9a732a3b504489120edb81765754, type: 3}
-      m_AnimationSpeed: 3
+      m_AnimationSpeed: 3.0000002
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -10, y: 7, z: 0}

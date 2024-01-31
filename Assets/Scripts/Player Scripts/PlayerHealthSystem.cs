@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerHealthSystem : MonoBehaviour
@@ -16,14 +17,12 @@ public class PlayerHealthSystem : MonoBehaviour
     public Rigidbody2D playerRb;
 
     public Text armorValue;
-    private bool armorChange;
 
     public float timer = 0f;
     public float timerinterval = 10f;
 
     private void Start()
     {
-        armorChange = false;
         isAlive = true;
         isInvincible = false;
         currentHealth = maxHealth;
@@ -37,7 +36,12 @@ public class PlayerHealthSystem : MonoBehaviour
         {
             currentHealth = maxHealth;
         }
-
+        if (!isAlive)
+        {
+            if(Input.GetKeyDown(KeyCode.R)) {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+        }
         timer += Time.deltaTime;
         if(timer >= timerinterval) {
             Regen();
