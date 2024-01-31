@@ -20,7 +20,7 @@ public class Character : MonoBehaviour
     [SerializeField] QuestionDialog questionDialog;
     [SerializeField] ItemSaveManager itemSaveManager;
     private ItemSlot dragItemSlot;
-
+    public Shop shop;
     private void OnValidate()
     {
         if (itemToolTip == null)
@@ -74,10 +74,11 @@ public class Character : MonoBehaviour
     }
     private void Equip(ItemSlot itemSlot)
     {
+        bool fromLoad;
         EquippableItem equippableItem = itemSlot.Item as EquippableItem;
         if (equippableItem != null)
         {
-            Equip(equippableItem);
+            EquipFromInventory(equippableItem);
         }
     }
 
@@ -195,10 +196,34 @@ public class Character : MonoBehaviour
         dropItemSlot.Amount += stacksToAdd;
         dragItemSlot.Amount -= stacksToAdd;
     }
-
     public void Equip(EquippableItem item)
     {
-        if (Inventory.RemoveItem(item))
+        Equip(item, false);
+    }
+
+    public void Equip(EquippableItem item, bool fromLoad)
+    {
+        if (fromLoad)
+        {
+            EquippableItem previousItem;
+            if (EquipmentPanel.AddItem(item, out previousItem))
+            {
+                if (previousItem != null)
+                {
+                    Inventory.AddItem(previousItem);
+                    previousItem.Unequip(this);
+                    statPanel.UpdateStatValues();
+                }
+                item.Equip(this);
+                statPanel.UpdateStatValues();
+            }
+            // Case when you cant equip item
+            else
+            {
+                Inventory.AddItem(item);
+            }
+        }
+        else if (Inventory.RemoveItem(item))
         {
             EquippableItem previousItem;
             if (EquipmentPanel.AddItem(item, out previousItem))
@@ -217,6 +242,7 @@ public class Character : MonoBehaviour
                 Inventory.AddItem(item);
             }
         }
+
     }
 
     public void Unequip(EquippableItem item)
@@ -228,4 +254,14 @@ public class Character : MonoBehaviour
             Inventory.AddItem(item);
         }
     }
+    public void EquipFromLoad(EquippableItem item)
+    {
+        Equip(item, true);
+    }
+
+    public void EquipFromInventory(EquippableItem item)
+    {
+        Equip(item, false);
+    }
+
 }

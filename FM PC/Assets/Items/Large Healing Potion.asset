@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e651aac9d595ee14a9839ceb5bb5dc25, type: 3}
   m_Name: Large Healing Potion
   m_EditorClassIdentifier: 
-  id: dc93adc24b5429b40ae5bfed7d85cfe6
-  ItemName: Potion
-  Icon: {fileID: -1971266147, guid: d99c3d55194383d45bde2e44fef3164a, type: 3}
-  MaximumStacks: 1
+  id: 8379065a54612254ab714040548147fc
+  itemName: Large Potion
+  icon: {fileID: -1029381343, guid: 3d71f08684356db4b87f3c2eb2e406fe, type: 3}
+  maximumStacks: 2
+  price: 2
   HpBonus: 0
   ManaBonus: 0
-  ArmorBonus: 0
+  ArmorBonus: 1
   StrengthBonus: 0
   CritBonus: 0
   SpeedBouns: 0

@@ -17,9 +17,19 @@ public class Slime : MonoBehaviour, IDamagable
 
     private bool isAlive;
 
+    public Shop shop;
+    
     private void Start()
     {
         isAlive = true;
+
+    }
+    public void OnValidate()
+    {
+        if (shop == null)
+        {
+            shop = FindObjectOfType<Shop>();
+        }
     }
 
     private void FixedUpdate()
@@ -60,9 +70,9 @@ public class Slime : MonoBehaviour, IDamagable
         if (health <= 0)
         {
             isAlive = false;
-            PlayerMoney.playerMoney += 1;
             animator.SetTrigger("Dead");
             StartCoroutine(Die());
+            shop.playerMoney += 1;
         }
 
         if (health > 1)

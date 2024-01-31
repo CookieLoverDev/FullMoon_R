@@ -10,7 +10,7 @@ public class HolySpirit : MonoBehaviour, IDamagable
     public Rigidbody2D spiritRb;
     private Vector2 floatDirection;
     private bool changeDirection;
-
+    public Shop shop;
     public DetectionZone range;
     public GameObject bulletPre;
     internal static Vector2 target;
@@ -24,6 +24,8 @@ public class HolySpirit : MonoBehaviour, IDamagable
         isAlive = true;
         changeDirection = true;
         canShoot = true;
+        if (shop == null)
+            shop = FindObjectOfType<Shop>();
     }
 
     private void Update()
@@ -76,7 +78,7 @@ public class HolySpirit : MonoBehaviour, IDamagable
         if (health <= 0)
         {
             isAlive = false;
-            PlayerMoney.playerMoney += 2;
+            shop.playerMoney += 2;
             Destroy(gameObject);
         }
 

@@ -2162,7 +2162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2855,7 +2855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3398,11 +3398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d80211bdc453844585fb2fe5a731371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingitems:
-  - {fileID: 11400000, guid: 8379065a54612254ab714040548147fc, type: 2}
-  - {fileID: 11400000, guid: 62d48f88947bd584fb22f1755944f8b2, type: 2}
-  - {fileID: 11400000, guid: 3c054755b4cf5aa4fa304636348949a5, type: 2}
-  - {fileID: 11400000, guid: 58c324f38dbd58c42ad3a3586783dde3, type: 2}
+  startingItems: []
   itemsParent: {fileID: 1363169580223330728}
   ItemSlots:
   - {fileID: 3507487915569449389}
@@ -5178,7 +5174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5334,6 +5330,7 @@ MonoBehaviour:
   dropItemArea: {fileID: 5590904061024484384}
   questionDialog: {fileID: 6981544384779032091}
   itemSaveManager: {fileID: 0}
+  shop: {fileID: 0}
 --- !u!1 &7374805985851631852
 GameObject:
   m_ObjectHideFlags: 0
@@ -5730,7 +5727,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

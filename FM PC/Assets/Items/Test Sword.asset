@@ -12,15 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e651aac9d595ee14a9839ceb5bb5dc25, type: 3}
   m_Name: Test Sword
   m_EditorClassIdentifier: 
-  id: 93d3fc22b833acb42bdb9e742f0693ff
-  ItemName: Sword
-  Icon: {fileID: 21300000, guid: 464180e82b5065c42835818b1b0141df, type: 3}
-  MaximumStacks: 1
+  id: 58c324f38dbd58c42ad3a3586783dde3
+  itemName: Big Sword
+  icon: {fileID: 21300000, guid: 464180e82b5065c42835818b1b0141df, type: 3}
+  maximumStacks: 1
+  price: 15
   HpBonus: 0
   ManaBonus: 0
   ArmorBonus: 0
   StrengthBonus: 5
-  CritBonus: 0
+  CritBonus: 1
   SpeedBouns: 1
   StrenghtPercentBonus: 0
   ManaPercentBonus: 0

@@ -1,16 +1,23 @@
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
 [CreateAssetMenu]
 public class Item : ScriptableObject
 {
-    [SerializeField] string id;
-    public string ID { get { return id; } }
-    public string ItemName;
-    public Sprite Icon;
+    [SerializeField] private string id;
+    [SerializeField] private string itemName;
+    [SerializeField] private Sprite icon;
     [Range(1, 999)]
-    public int MaximumStacks = 1;
+    [SerializeField] private int maximumStacks = 1;
+    [SerializeField] private int price;
 
+    public string ID { get { return id; } }
+    public string ItemName { get { return itemName; } }
+    public Sprite Icon { get { return icon; } }
+    public int MaximumStacks { get { return maximumStacks; } }
+    public int Price { get { return price; } }
     public void OnValidate()
     {
         string path = AssetDatabase.GetAssetPath(this);
@@ -21,6 +28,7 @@ public class Item : ScriptableObject
     {
         return this;
     }
+
     public virtual void Destroy()
     {
 

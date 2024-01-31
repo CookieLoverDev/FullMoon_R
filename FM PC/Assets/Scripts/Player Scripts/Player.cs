@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -29,6 +30,16 @@ public class Player : MonoBehaviour
     public Animator animator;
     private Combat combat;
 
+    public Text moneyText;
+    public Shop shop;
+
+    public void OnValidate()
+    {
+        if(shop == null)
+        {
+            shop = FindObjectOfType<Shop>();
+        }
+    }
     private void Start()
     {
         currentSpeed = walkSpeed;
@@ -85,6 +96,8 @@ public class Player : MonoBehaviour
 
         sprintInput = Input.GetKey(KeyCode.LeftShift);
         dashInput = Input.GetKeyDown(KeyCode.Space);
+
+        moneyText.text = shop.playerMoney.ToString();
     }
 
     private void FixedUpdate()

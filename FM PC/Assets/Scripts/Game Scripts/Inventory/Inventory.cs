@@ -3,11 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 using static UnityEditor.Progress;
 
 public class Inventory : MonoBehaviour
 {
-    [SerializeField] Item[] startingitems;
+    [SerializeField] public Item[] startingItems;
+    public Item[] StartingItems => startingItems;
     [SerializeField] protected Transform itemsParent;
     public List<ItemSlot> ItemSlots;
 
@@ -18,6 +20,8 @@ public class Inventory : MonoBehaviour
     public event Action<ItemSlot> OnEndDragEvent;
     public event Action<ItemSlot> OnDragEvent;
     public event Action<ItemSlot> OnDropEvent;
+
+
 
     private void Start()
     {
@@ -33,7 +37,9 @@ public class Inventory : MonoBehaviour
         }
 
         SetStartingItems();
+        UpdateStartingItems();
     }
+
 
     private void OnValidate()
     {
@@ -45,9 +51,9 @@ public class Inventory : MonoBehaviour
     private void SetStartingItems()
     {
         int i = 0;
-        for (; i < startingitems.Length && i < ItemSlots.Count; i++)
+        for (; i < startingItems.Length && i < ItemSlots.Count; i++)
         {
-            ItemSlots[i].Item = startingitems[i].GetCopy();
+            ItemSlots[i].Item = startingItems[i].GetCopy();
             ItemSlots[i].Amount = 1;
         }
 
@@ -122,4 +128,10 @@ public class Inventory : MonoBehaviour
             ItemSlots[i].Amount = 0;
         }
     }
+
+    public void UpdateStartingItems()
+    {
+        SetStartingItems(); ;
+    }
+
 }

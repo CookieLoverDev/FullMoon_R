@@ -53,6 +53,5 @@ public class UiManager : MonoBehaviour
         enemiesCountValue = EnemiesManager.enemiesOnLvl;
         enemiesCount.text = enemiesCountValue.ToString();
 
-        playerMoney.text = PlayerMoney.playerMoney.ToString();
     }
 }

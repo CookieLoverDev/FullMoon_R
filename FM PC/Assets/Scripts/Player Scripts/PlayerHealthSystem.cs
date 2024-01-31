@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class PlayerHealthSystem : MonoBehaviour
 {
     public static float maxHealth = 6;
-    internal  static float currentHealth;
+    internal static float currentHealth;
     internal static float armor;
 
     private bool isInvincible;
@@ -17,6 +17,9 @@ public class PlayerHealthSystem : MonoBehaviour
 
     public Text armorValue;
     private bool armorChange;
+
+    public float timer = 0f;
+    public float timerinterval = 10f;
 
     private void Start()
     {
@@ -30,11 +33,16 @@ public class PlayerHealthSystem : MonoBehaviour
 
     private void Update()
     {
-        if(currentHealth > maxHealth)
+        if (currentHealth > maxHealth)
         {
             currentHealth = maxHealth;
         }
 
+        timer += Time.deltaTime;
+        if(timer >= timerinterval) {
+            Regen();
+            timer = 0f;
+        }
         if (currentHealth <= 0)
         {
             isAlive = false;
@@ -54,20 +62,37 @@ public class PlayerHealthSystem : MonoBehaviour
             RecieveDamage(1, Vector2.zero);
         }
 
-        if (armorValue.text != "0" && !armorChange)
-        {
-            armorChange = true;
-            maxHealth += Convert.ToInt32(armorValue.text);
-            currentHealth += Convert.ToInt32(armorValue.text);
-        }
 
-        if (armorValue.text == "0" && armorChange)
+        if (armorValue.text == "1") {
+            maxHealth = 7;
+        }
+        else if (armorValue.text == "2")
         {
-            armorChange = false;
-            maxHealth = 6;
+            maxHealth = 8;
+        }
+        else if (armorValue.text == "3")
+        {
+            maxHealth = 9;
+
+        }
+        else if (armorValue.text == "4") {
+            maxHealth = 10;
+        }
+        else if (armorValue.text == "0")
+        {
         }
     }
 
+    public void Regen()
+    {
+        if (isAlive)
+        {
+            if (currentHealth != maxHealth)
+            {
+                currentHealth += 1;
+            }
+        }
+    }
     public void RecieveDamage(float damage, Vector2 knockBack)
     {
         if (!isInvincible && isAlive)

@@ -46,8 +46,7 @@ public class ItemSaveManager : MonoBehaviour
             }
 
             Item item = itemDatabase.GetItemCopy(savedSlot.ItemID);
-            character.Inventory.AddItem(item);
-            character.Equip((EquippableItem)item);
+            character.EquipFromLoad((EquippableItem)item);
         }
     }
 
@@ -81,4 +80,6 @@ public class ItemSaveManager : MonoBehaviour
 
         ItemSaveIO.SaveItems(saveData, fileName);
     }
+
+
 }

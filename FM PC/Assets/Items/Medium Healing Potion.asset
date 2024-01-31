@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e651aac9d595ee14a9839ceb5bb5dc25, type: 3}
   m_Name: Medium Healing Potion
   m_EditorClassIdentifier: 
-  id: f0f9585bf3c5c674f92c7f8b245cc76c
-  ItemName: Potion
-  Icon: {fileID: -1515965999, guid: 3d71f08684356db4b87f3c2eb2e406fe, type: 3}
-  MaximumStacks: 1
+  id: 62d48f88947bd584fb22f1755944f8b2
+  itemName: Medium Potion
+  icon: {fileID: -2057189390, guid: d99c3d55194383d45bde2e44fef3164a, type: 3}
+  maximumStacks: 2
+  price: 15
   HpBonus: 0
   ManaBonus: 0
   ArmorBonus: 0

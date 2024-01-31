@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Small Healing Potion
   m_EditorClassIdentifier: 
   id: 3c054755b4cf5aa4fa304636348949a5
-  ItemName: Potion
-  Icon: {fileID: 287316697, guid: 3d71f08684356db4b87f3c2eb2e406fe, type: 3}
-  MaximumStacks: 1
+  itemName: Small Potion
+  icon: {fileID: 287316697, guid: 3d71f08684356db4b87f3c2eb2e406fe, type: 3}
+  maximumStacks: 2
+  price: 10
   HpBonus: 0
   ManaBonus: 0
   ArmorBonus: 1
@@ -28,4 +29,4 @@ MonoBehaviour:
   ArmorPercentBonus: 0
   CritPercentBonus: 0
   HpPercentBonus: 0
-  EquipmentType: 5
+  EquipmentType: 1

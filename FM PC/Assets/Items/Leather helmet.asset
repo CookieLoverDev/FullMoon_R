@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e651aac9d595ee14a9839ceb5bb5dc25, type: 3}
+  m_Name: Leather helmet
+  m_EditorClassIdentifier: 
+  id: 3dc0110f4cfdb4343a1e978e23d6814d
+  itemName: Leather Helmet
+  icon: {fileID: 21300000, guid: 99c3ea77183b5de4aa64ce612c088c37, type: 3}
+  maximumStacks: 1
+  price: 10
+  HpBonus: 0
+  ManaBonus: 0
+  ArmorBonus: 1
+  StrengthBonus: 0
+  CritBonus: 0
+  SpeedBouns: 0
+  StrenghtPercentBonus: 0
+  ManaPercentBonus: 0
+  SpeedPercentBonus: 0
+  ArmorPercentBonus: 0
+  CritPercentBonus: 0
+  HpPercentBonus: 0
+  EquipmentType: 4
