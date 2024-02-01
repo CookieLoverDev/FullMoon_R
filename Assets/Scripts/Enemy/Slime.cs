@@ -72,7 +72,7 @@ public class Slime : MonoBehaviour, IDamagable
             isAlive = false;
             animator.SetTrigger("Dead");
             StartCoroutine(Die());
-            shop.playerMoney += 1;
+            shop.playermoney += 1;
         }
 
         if (health > 1)

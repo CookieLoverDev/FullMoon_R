@@ -78,7 +78,7 @@ public class HolySpirit : MonoBehaviour, IDamagable
         if (health <= 0)
         {
             isAlive = false;
-            shop.playerMoney += 2;
+            shop.playermoney += 2;
             Destroy(gameObject);
         }
 

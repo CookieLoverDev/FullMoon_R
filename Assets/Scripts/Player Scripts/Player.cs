@@ -59,6 +59,11 @@ public class Player : MonoBehaviour
             trailRenderer.emitting = false;
         }
     }
+    public void OnDestroy()
+    {
+        PlayerPrefs.SetInt("playermoney", shop.playermoney);
+
+    }
 
     private void Update()
     {
@@ -97,7 +102,7 @@ public class Player : MonoBehaviour
         sprintInput = Input.GetKey(KeyCode.LeftShift);
         dashInput = Input.GetKeyDown(KeyCode.Space);
 
-        moneyText.text = shop.playerMoney.ToString();
+        moneyText.text = shop.playermoney.ToString();
     }
 
     private void FixedUpdate()

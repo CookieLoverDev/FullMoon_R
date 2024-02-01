@@ -2,13 +2,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 
 public class Shop : MonoBehaviour
 {
     public Inventory playerInventory;
     public ItemDatabase itemDatabase;
     public ItemSaveManager itemSaveManager;
-    public int playerMoney;
+    public int playermoney;
     public Text moneyText;
     public event Action<int> OnPlayerMoneyChanged;
 
@@ -16,6 +17,15 @@ public class Shop : MonoBehaviour
     {
         UpdateShopUI();
 
+        if (!PlayerPrefs.HasKey("playermoney"))
+        {
+            PlayerPrefs.SetInt("playermoney", 0);
+        }
+        else
+        {
+
+        }
+        playermoney = PlayerPrefs.GetInt("playermoney");
     }
 
 
@@ -24,10 +34,10 @@ public class Shop : MonoBehaviour
     {
         Item item = itemDatabase.GetItemReference(itemID);
 
-        if (item != null && playerMoney >= item.Price)
+        if (item != null && playermoney >= item.Price)
         {
-            playerMoney -= item.Price;
-            OnPlayerMoneyChanged?.Invoke(playerMoney);
+            playermoney -= item.Price;
+            OnPlayerMoneyChanged?.Invoke(playermoney);
 
             playerInventory.AddItem(item);
             UpdateMoneyText();
@@ -47,11 +57,11 @@ public class Shop : MonoBehaviour
 
     private void UpdateMoneyText()
     {
-        moneyText.text = playerMoney.ToString();
+        moneyText.text = playermoney.ToString();
     }
     private void UpdateShopUI()
     {
-        playerMoney.ToString();
+        playermoney.ToString();
     }
 
 
