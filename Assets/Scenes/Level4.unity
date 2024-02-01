@@ -1500,7 +1500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9622001c6046c0944be45e58c231c1ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plmoney: {fileID: 1245721149}
+  shop: {fileID: 161978386}
 --- !u!224 &189622031
 RectTransform:
   m_ObjectHideFlags: 0

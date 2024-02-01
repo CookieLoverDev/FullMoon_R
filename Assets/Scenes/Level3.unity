@@ -56546,7 +56546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9622001c6046c0944be45e58c231c1ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plmoney: {fileID: 485294257}
+  shop: {fileID: 1198025787}
 --- !u!61 &2106221533
 BoxCollider2D:
   m_ObjectHideFlags: 0

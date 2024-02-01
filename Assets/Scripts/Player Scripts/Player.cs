@@ -58,12 +58,17 @@ public class Player : MonoBehaviour
         {
             trailRenderer.emitting = false;
         }
-    }
-    public void OnDestroy()
-    {
-        PlayerPrefs.SetInt("playermoney", shop.playermoney);
 
+        if (!PlayerPrefs.HasKey("playermoney"))
+        {
+            PlayerPrefs.SetInt("playermoney", 0);
+        }
+        else
+        {
+            shop.playermoney = PlayerPrefs.GetInt("playermoney");
+        }
     }
+
 
     private void Update()
     {

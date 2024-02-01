@@ -9,26 +9,15 @@ public class Shop : MonoBehaviour
     public Inventory playerInventory;
     public ItemDatabase itemDatabase;
     public ItemSaveManager itemSaveManager;
-    public int playermoney;
+    internal int playermoney;
     public Text moneyText;
     public event Action<int> OnPlayerMoneyChanged;
 
     public void Start()
     {
         UpdateShopUI();
-
-        if (!PlayerPrefs.HasKey("playermoney"))
-        {
-            PlayerPrefs.SetInt("playermoney", 0);
-        }
-        else
-        {
-
-        }
-        playermoney = PlayerPrefs.GetInt("playermoney");
+         
     }
-
-
 
     public void BuyItem(string itemID)
     {
